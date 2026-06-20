@@ -182,31 +182,12 @@
 
         /* Closed gate */
         .gate--closed { background: var(--card); box-shadow: var(--sh-sm); cursor: default; }
-        .gate--closed .gate-media img { filter: grayscale(0.85) brightness(0.96); opacity: 0.62; }
-        .gate--closed .gate-media::after {
-            content: ''; position: absolute; inset: 0;
-            background: repeating-linear-gradient(45deg, rgba(168,68,43,0) 0 11px, rgba(168,68,43,0.1) 11px 22px);
-        }
+        .gate--closed .gate-media img { filter: grayscale(0.9) brightness(0.99); opacity: 0.66; }
         .gate--closed .gate-name { color: var(--ink-2); }
 
-        /* Primary gate (Main Gate) */
-        .gate-primary {
-            position: relative; display: flex; align-items: center; gap: 15px; overflow: hidden;
-            padding: 19px 19px 19px 21px; margin-bottom: 14px; border-radius: 20px;
-            background: linear-gradient(152deg, #1a6d54 0%, var(--pine) 46%, var(--pine-2) 100%);
-            color: #f4f8f4; box-shadow: var(--sh-pine);
-            transition: transform 0.28s cubic-bezier(0.22,0.7,0.24,1), box-shadow 0.28s cubic-bezier(0.22,0.7,0.24,1);
-        }
-        .gate-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(14,74,57,0.18), 0 16px 32px rgba(14,74,57,0.26); }
-        .gate-primary:active { transform: translateY(0) scale(0.995); box-shadow: var(--sh-pine); transition-duration: 0.1s; }
-        .pg-leaf { position: absolute; right: -20px; top: -30px; width: 150px; height: auto; color: #ffffff; opacity: 0.17; transform: rotate(22deg); pointer-events: none; }
-        .pg-main { flex: 1; min-width: 0; position: relative; z-index: 1; }
-        .pg-status { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #cdeada; }
-        .pg-status .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #6ee0a8; box-shadow: 0 0 0 0 rgba(110,224,168,0.6); animation: ping 2.4s ease-out infinite; }
-        .pg-name { font-family: var(--font-display); font-size: 25px; font-weight: 560; letter-spacing: -0.2px; line-height: 1.08; margin-top: 8px; color: #fffdf8; }
-        .pg-go { position: relative; z-index: 1; flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); display: grid; place-items: center; transition: background 0.2s ease; }
-        .gate-primary:hover .pg-go { background: rgba(255,255,255,0.22); }
-        .pg-go svg { width: 19px; height: 19px; stroke: #fffdf8; }
+        /* Open tag for the recommended open gate */
+        .tag--open { background: var(--pine); color: #fff; }
+        .tag--open .live-dot { animation: ping-w 2.4s ease-out infinite; }
 
         /* Contacts */
         .contact { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 16px; margin-bottom: 11px; box-shadow: var(--sh-sm); }
@@ -326,17 +307,22 @@
 
             <div class="gates">
 
-                <!-- Main Gate: open, primary call to action -->
+                <!-- Main Gate: open, recommended -->
                 <a href="https://www.google.com/maps/dir/?api=1&destination=12.850022,80.226467&travelmode=driving"
-                   class="gate-primary reveal" style="--d:0.3s" data-category="car bike walking" data-track="main_gate" target="_blank" rel="noopener noreferrer">
-                    <svg class="pg-leaf" viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 8 C 96 40, 100 96, 60 142 C 20 96, 24 40, 60 8 Z"/><path d="M60 20 L 60 132"/><path d="M60 50 C 49 56, 43 63, 39 74"/><path d="M60 50 C 71 56, 77 63, 81 74"/><path d="M60 82 C 50 88, 45 95, 42 106"/><path d="M60 82 C 70 88, 75 95, 78 106"/></svg>
-                    <div class="pg-main">
-                        <span class="pg-status"><span class="live-dot"></span><span data-i18n="status-open">Open now</span></span>
-                        <h2 class="pg-name" data-i18n="maingate-title">Main Gate</h2>
+                   class="gate-photo reveal" style="--d:0.3s" data-category="car bike walking" data-track="main_gate" target="_blank" rel="noopener noreferrer">
+                    <div class="gate-media">
+                        <img src="main-gate.webp" alt="Sandhya Infocity main gate, now open" loading="lazy" width="1280" height="960">
+                        <span class="tag tag--open"><span class="live-dot"></span><span data-i18n="status-open">Open now</span></span>
                     </div>
-                    <span class="pg-go" aria-hidden="true">
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-                    </span>
+                    <div class="gate-body">
+                        <div class="gate-head">
+                            <h3 class="gate-name" data-i18n="maingate-title">Main Gate</h3>
+                            <span class="gate-go" aria-hidden="true">
+                                <span data-i18n="directions">Directions</span>
+                                <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                            </span>
+                        </div>
+                    </div>
                 </a>
 
                 <!-- Back Entrance 2: open, alternate route -->
@@ -362,7 +348,7 @@
                 </a>
 
                 <!-- Back Entrance 1: closed for paver work -->
-                <div class="gate-photo gate--closed reveal" style="--d:0.42s" data-category="car" data-track="entrance1_closed" aria-disabled="true">
+                <div class="gate-photo gate--closed reveal" style="--d:0.42s" data-category="car vendors" data-track="entrance1_closed" aria-disabled="true">
                     <div class="gate-media">
                         <img src="back-entrance-1.webp" alt="Back Entrance 1, closed for paver work" loading="lazy" width="1246" height="674">
                         <span class="tag tag--closed"><span data-i18n="status-closed">Closed</span></span>
