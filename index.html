@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sandhya Infocity back gate entrance guide with directions, maps, and security contacts.">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Sandhya Infocity campus entrance guide with live gate status, directions and security contacts.">
+    <meta name="theme-color" content="#f3efe6">
     <meta name="robots" content="noindex, nofollow">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://gc.zgo.at; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://renvia-code.goatcounter.com; connect-src 'self' https://renvia-code.goatcounter.com; base-uri 'none'; form-action 'none'">
 
-    <meta property="og:title" content="Sandhya Infocity – Entrance Guide">
-    <meta property="og:description" content="Navigate to the nearest back gate entrance at Sandhya Infocity IT Park.">
+    <meta property="og:title" content="Sandhya Infocity · Entrance Guide">
+    <meta property="og:description" content="Live gate status and directions for Sandhya Infocity. The Main Gate is open.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://sandhyainfocity.support/entrance-photo.webp">
+    <meta property="og:image" content="https://sandhyainfocity.support/main-gate.webp">
     <meta property="og:url" content="https://sandhyainfocity.support/">
 
-    <title>Sandhya Infocity &ndash; Entrance Guide</title>
+    <title>Sandhya Infocity · Entrance Guide</title>
 
     <link rel="icon" type="image/png" href="sandhya-infocity.png">
     <link rel="apple-touch-icon" href="sandhya-infocity.png">
@@ -24,25 +24,34 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hind+Madurai:wght@300;400;500;600;700&family=Noto+Serif+Tamil:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --c-bg: #ffffff;
-            --c-text: #111827;
-            --c-text-secondary: #4b5563;
-            --c-text-muted: #6b7280;
-            --c-border: #e5e7eb;
-            --c-surface: #f9fafb;
-            --c-accent: #2563eb;
-            --c-green: #059669;
-            --c-green-bg: #ecfdf5;
-            --c-wa: #16a34a;
-            --c-wa-bg: #f0fdf4;
-            --c-warm: #f59e0b;
-            --c-warm-bg: #fff7ed;
-            --r-card: 16px;
-            --r-btn: 10px;
+            --paper: #f3efe6;
+            --paper-2: #ece7da;
+            --card: #fffdf8;
+            --ink: #211f19;
+            --ink-2: #5b564a;
+            --ink-3: #8d8676;
+            --line: #e4ddcd;
+            --line-2: #efe9dc;
+            --pine: #16604a;
+            --pine-2: #0e4a39;
+            --pine-soft: #e6efe8;
+            --pine-tint: #f0f6f1;
+            --clay: #a8442b;
+            --clay-soft: #f6e7df;
+            --brass: #a9824b;
+            --brass-soft: #ece0c9;
+            --wa: #128c4a;
+            --wa-soft: #e7f3ea;
+            --sh-sm: 0 1px 2px rgba(33,31,25,0.05), 0 1px 1px rgba(33,31,25,0.04);
+            --sh-md: 0 2px 5px rgba(33,31,25,0.05), 0 6px 16px rgba(33,31,25,0.06);
+            --sh-lg: 0 2px 5px rgba(33,31,25,0.04), 0 8px 18px rgba(33,31,25,0.07), 0 18px 34px rgba(33,31,25,0.08);
+            --sh-pine: 0 3px 8px rgba(14,74,57,0.16), 0 12px 26px rgba(14,74,57,0.2);
+            --font-display: 'Fraunces', 'Noto Serif Tamil', Georgia, serif;
+            --font-body: 'Hind Madurai', 'Noto Serif Tamil', system-ui, sans-serif;
         }
 
         *, *::before, *::after {
@@ -50,410 +59,401 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html { -webkit-text-size-adjust: 100%; }
+        html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; background-color: var(--paper); }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--c-bg); color: var(--c-text);
+            font-family: var(--font-body);
+            color: var(--ink);
+            background-color: var(--paper);
+            background-image: radial-gradient(640px 320px at 50% -40px, #fbf8f0 0%, rgba(251,248,240,0) 75%);
+            background-repeat: no-repeat;
             min-height: 100vh;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         img { display: block; max-width: 100%; }
         a { text-decoration: none; color: inherit; }
 
+        ::selection { background: var(--pine-soft); color: var(--pine-2); }
+
+        /* Grain atmosphere */
+        .grain {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.05;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 170px 170px;
+        }
+
         .skip-link {
-            position: absolute; top: -100%; left: 16px;
-            padding: 8px 16px; background: var(--c-accent); color: #fff;
-            font-size: 14px; font-weight: 500;
-            border-radius: 0 0 8px 8px; z-index: 100;
+            position: absolute; top: -120%; left: 16px; z-index: 100;
+            padding: 9px 16px; background: var(--pine); color: #fff;
+            font-size: 13px; font-weight: 600; border-radius: 0 0 10px 10px;
         }
         .skip-link:focus { top: 0; }
 
-        .page { max-width: 480px; margin: 0 auto; padding-bottom: 48px; }
-        .content { padding: 0 20px; }
+        .page { position: relative; z-index: 1; max-width: 472px; margin: 0 auto; padding-bottom: 40px; }
+
+        /* Topbar */
+        .topbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px 6px; }
+        .brand { display: flex; align-items: center; gap: 10px; }
+        .brand-mark { width: 34px; height: 34px; border-radius: 10px; object-fit: cover; background: #fff; box-shadow: 0 1px 3px rgba(33,31,25,0.12), inset 0 0 0 1px rgba(33,31,25,0.06); }
+        .brand-name { font-family: var(--font-display); font-size: 15.5px; font-weight: 560; letter-spacing: 0.2px; color: var(--ink); }
+        .lang-toggle { display: inline-flex; padding: 3px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--sh-sm); }
+        .lang-btn { border: none; background: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; font-weight: 600; color: var(--ink-3); padding: 5px 13px; border-radius: 999px; transition: background 0.2s ease, color 0.2s ease; }
+        .lang-btn[aria-pressed="true"] { background: var(--ink); color: #fdfcf8; }
+        .lang-btn:active { transform: scale(0.96); }
 
         /* Hero */
-        .hero { position: relative; width: 100%; aspect-ratio: 16/9; max-height: 240px; overflow: hidden; }
-        .hero img { width: 100%; height: 100%; object-fit: cover; }
-        .hero::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 72px;
-            background: linear-gradient(to top, var(--c-bg) 0%, transparent 100%); pointer-events: none;
-        }
+        .hero { padding: 12px 22px 0; }
+        .hero-frame { position: relative; border-radius: 22px; overflow: hidden; box-shadow: var(--sh-lg); aspect-ratio: 4 / 3; max-height: 290px; }
+        .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,16,11,0.4) 0%, rgba(20,16,11,0) 25%, rgba(20,16,11,0) 48%, rgba(20,16,11,0.68) 100%); }
+        .hero-kicker { position: absolute; left: 16px; top: 13px; color: #fbf8f0; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
+        .hero-status { position: absolute; left: 14px; right: 14px; bottom: 13px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .hs-item { display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.2px; box-shadow: 0 3px 10px rgba(0,0,0,0.22); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+        .hs-open { background: rgba(18,108,82,0.9); }
+        .hs-closed { background: rgba(170,66,42,0.9); }
+        .hs-item .dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+        .hs-open .dot { animation: ping-w 2.4s ease-out infinite; }
 
-        /* Header */
-        .header { text-align: center; padding: 4px 24px 0; }
-        .header-logo { width: 44px; height: 44px; margin: 0 auto 10px; }
-        .header-logo img { width: 100%; height: 100%; object-fit: contain; }
-        .header h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.2; }
-        .header .subtitle { font-size: 14px; color: var(--c-text-secondary); margin-top: 6px; line-height: 1.5; }
+        /* Intro */
+        .intro { text-align: center; padding: 22px 24px 2px; }
+        .eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 2.4px; text-transform: uppercase; color: var(--pine); }
+        .title { font-family: var(--font-display); font-size: 35px; font-weight: 540; line-height: 1.02; letter-spacing: -0.6px; color: var(--ink); margin-top: 9px; }
+        .subtitle { font-size: 15px; color: var(--ink-2); line-height: 1.5; margin-top: 10px; }
+        .arch { display: block; margin: 22px auto 0; width: 138px; height: auto; color: var(--brass); opacity: 0.6; }
 
-        /* Language toggle */
-        .lang-toggle { display: flex; justify-content: center; margin-top: 14px; }
-        .lang-btn {
-            padding: 6px 18px; font-size: 12px; font-weight: 600; font-family: inherit;
-            border: 1px solid var(--c-border); background: var(--c-bg); color: var(--c-text-muted);
-            cursor: pointer; transition: background 0.15s ease, color 0.15s ease; position: relative;
-        }
-        .lang-btn:first-child { border-radius: 8px 0 0 8px; }
-        .lang-btn:last-child { border-radius: 0 8px 8px 0; margin-left: -1px; }
-        .lang-btn[aria-pressed="true"] { background: var(--c-text); color: #fff; border-color: var(--c-text); z-index: 1; }
-        .lang-btn:active { transform: scale(0.97); }
+        /* Content */
+        .content { padding: 4px 22px 0; }
+        .section-label { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 34px 0 16px; font-size: 11.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-3); }
+        .section-label .rule { height: 1px; width: 26px; background: var(--brass); opacity: 0.7; border-radius: 1px; }
 
-        /* Section labels */
-        .section-label {
-            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            color: var(--c-text-muted); margin: 32px 0 14px; padding-left: 2px;
+        /* Arrive selector */
+        .arrive-label { text-align: center; font-size: 11.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-3); margin: 4px 0 14px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 auto 4px; max-width: 334px; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 7px; padding: 9px 14px;
+            border: 1px solid var(--line); background: var(--card); color: var(--ink-2);
+            border-radius: 999px; font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+            cursor: pointer; box-shadow: var(--sh-sm); white-space: nowrap;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
         }
+        .chip svg { width: 16px; height: 16px; flex-shrink: 0; stroke: currentColor; }
+        .chip[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: #fbf8f0; box-shadow: var(--sh-md); }
+        .chip:active { transform: scale(0.95); }
 
-        /* Filter bar */
-        .filter-bar { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-        .filter-row { display: flex; gap: 8px; justify-content: center; }
-        .filter-badge {
-            display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px;
-            border-radius: 28px; border: 1.5px solid var(--c-border); background: var(--c-bg);
-            color: var(--c-text-secondary); font-size: 16px; font-weight: 600; font-family: inherit;
-            cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-            flex: 1; justify-content: center; max-width: 160px;
-        }
-        .filter-row-single { justify-content: center; }
-        .filter-row-single .filter-badge { flex: 0 1 auto; }
-        .filter-badge svg { height: 20px; width: 20px; flex-shrink: 0; }
-        .filter-badge[aria-pressed="true"] { background: var(--c-accent); color: #fff; border-color: var(--c-accent); }
-        .filter-badge[aria-pressed="true"] svg { stroke: #fff; fill: #fff; }
-        .filter-badge[data-filter="walking"][aria-pressed="true"] { background: var(--c-green); border-color: var(--c-green); }
-        .filter-badge:active { transform: scale(0.96); }
+        /* Gate cards */
+        .gates { margin-top: 22px; }
+        .gate[hidden] { display: none; }
 
-        /* Entrance cards */
-        .entrance-card {
-            display: block; background: var(--c-bg); border: 1px solid var(--c-border);
-            border-radius: var(--r-card); overflow: hidden; margin-bottom: 14px;
-            transition: transform 0.12s ease, box-shadow 0.12s ease;
-            -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none;
+        .gate-photo {
+            display: block; position: relative; background: var(--card);
+            border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+            box-shadow: var(--sh-md); margin-bottom: 14px;
+            transition: transform 0.28s cubic-bezier(0.22,0.7,0.24,1), box-shadow 0.28s cubic-bezier(0.22,0.7,0.24,1);
         }
-        .entrance-card[hidden] { display: none; }
-        a.entrance-card:active { transform: scale(0.98); box-shadow: 0 0 0 3px rgba(37,99,235,0.08); }
-        .entrance-card-link { display: block; color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-        .entrance-card-image { position: relative; width: 100%; aspect-ratio: 2.4/1; overflow: hidden; background: #f3f4f6; }
-        .entrance-card-image img { width: 100%; height: 100%; object-fit: cover; }
-        .card-badge {
-            position: absolute; top: 10px; left: 10px;
-            background: rgba(255,255,255,0.95);
-            padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; color: var(--c-text);
+        a.gate-photo:hover { transform: translateY(-2px); box-shadow: var(--sh-lg); }
+        a.gate-photo:active { transform: translateY(0) scale(0.995); box-shadow: var(--sh-md); transition-duration: 0.1s; }
+        .gate-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--paper-2); }
+        .gate-media img { width: 100%; height: 100%; object-fit: cover; }
+        .tag {
+            position: absolute; top: 12px; left: 12px; display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 11px 6px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.2px;
+            backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
         }
-        .entrance-card-body { padding: 14px 16px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-        .entrance-card-info h3 { font-size: 15px; font-weight: 600; line-height: 1.3; margin-bottom: 2px; }
-        .entrance-card-info p { font-size: 13px; color: var(--c-text-secondary); }
-        .entrance-card-info .block-badge { display: inline-block; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; background: var(--c-surface); color: var(--c-text-muted); border: 1px solid var(--c-border); margin-top: 6px; margin-right: 4px; }
-        .entrance-card-info .badge-hcl { background: #2563eb; color: #fff; border-color: #2563eb; }
-        .entrance-card-info .badge-fujitsu { background: #dc2626; color: #fff; border-color: #dc2626; }
-        .entrance-card-info .badge-tds { background: #f97316; color: #fff; border-color: #f97316; }
-        .card-cta { display: flex; align-items: center; gap: 3px; font-size: 13px; font-weight: 500; color: var(--c-accent); white-space: nowrap; flex-shrink: 0; }
-        .card-cta svg { width: 14px; height: 14px; }
+        .tag--quiet { background: rgba(255,253,248,0.92); color: var(--pine); border: 1px solid var(--pine-soft); }
+        .tag--closed { background: var(--clay); color: #fdf3ee; }
+        .tag .live-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+        .gate-body { padding: 15px 17px 17px; }
+        .gate-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+        .gate-name { font-family: var(--font-display); font-size: 19.5px; font-weight: 540; letter-spacing: 0.1px; color: var(--ink); line-height: 1.15; }
+        .gate-go { display: inline-flex; align-items: center; gap: 5px; color: var(--pine); font-size: 13px; font-weight: 600; white-space: nowrap; }
+        .gate-go svg { width: 14px; height: 14px; }
+        .gate-desc { margin-top: 5px; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+        .closed-hint { margin-top: 7px; font-size: 13px; font-weight: 600; color: var(--clay); }
+        .tags-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .btag { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; padding: 3px 8px; border-radius: 6px; background: var(--paper-2); color: var(--ink-3); border: 1px solid var(--line); }
+        .btag-hcl { background: #eaf0fb; color: #2c5cc4; border-color: #d9e4f7; }
+        .btag-fujitsu { background: #fbeae8; color: #c0392b; border-color: #f4d6d2; }
+        .btag-tds { background: #fdf0e3; color: #c9711b; border-color: #f6e1c8; }
 
-        /* Contact cards */
-        .contact-card { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: 14px; padding: 16px; margin-bottom: 10px; }
-        .contact-card.primary { border-color: var(--c-green); border-width: 1.5px; }
-        .contact-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; position: relative; }
-        .lang-badge { position: absolute; top: 0; right: 0; display: flex; gap: 4px; }
-        .lang-badge span { padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.3px; background: var(--c-surface); color: var(--c-text-muted); border: 1px solid var(--c-border); }
-        .contact-avatar { width: 38px; height: 38px; border-radius: 50%; background: #f3f4f6; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .contact-avatar svg { width: 18px; height: 18px; stroke: var(--c-text-muted); fill: none; }
-        .contact-name { font-size: 15px; font-weight: 600; line-height: 1.3; }
-        .contact-role { font-size: 12px; color: var(--c-text-muted); margin-top: 1px; }
-        .contact-actions { display: flex; gap: 8px; }
-
-        /* Buttons */
-        .btn {
-            flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
-            padding: 10px 14px; border-radius: var(--r-btn); font-size: 13px; font-weight: 500;
-            font-family: inherit; border: none; cursor: pointer; transition: transform 0.1s ease;
+        /* Closed gate */
+        .gate--closed { background: var(--card); box-shadow: var(--sh-sm); cursor: default; }
+        .gate--closed .gate-media img { filter: grayscale(0.85) brightness(0.96); opacity: 0.62; }
+        .gate--closed .gate-media::after {
+            content: ''; position: absolute; inset: 0;
+            background: repeating-linear-gradient(45deg, rgba(168,68,43,0) 0 11px, rgba(168,68,43,0.1) 11px 22px);
         }
-        .btn:active { transform: scale(0.96); }
-        .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-        .btn-call { background: var(--c-green-bg); color: var(--c-green); }
-        .btn-call svg { stroke: var(--c-green); fill: none; }
-        .btn-wa { background: var(--c-wa-bg); color: var(--c-wa); }
-        .btn-wa svg { fill: var(--c-wa); stroke: none; }
+        .gate--closed .gate-name { color: var(--ink-2); }
+
+        /* Primary gate (Main Gate) */
+        .gate-primary {
+            position: relative; display: flex; align-items: center; gap: 15px; overflow: hidden;
+            padding: 19px 19px 19px 21px; margin-bottom: 14px; border-radius: 20px;
+            background: linear-gradient(152deg, #1a6d54 0%, var(--pine) 46%, var(--pine-2) 100%);
+            color: #f4f8f4; box-shadow: var(--sh-pine);
+            transition: transform 0.28s cubic-bezier(0.22,0.7,0.24,1), box-shadow 0.28s cubic-bezier(0.22,0.7,0.24,1);
+        }
+        .gate-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(14,74,57,0.18), 0 16px 32px rgba(14,74,57,0.26); }
+        .gate-primary:active { transform: translateY(0) scale(0.995); box-shadow: var(--sh-pine); transition-duration: 0.1s; }
+        .pg-leaf { position: absolute; right: -20px; top: -30px; width: 150px; height: auto; color: #ffffff; opacity: 0.17; transform: rotate(22deg); pointer-events: none; }
+        .pg-main { flex: 1; min-width: 0; position: relative; z-index: 1; }
+        .pg-status { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #cdeada; }
+        .pg-status .live-dot { width: 7px; height: 7px; border-radius: 50%; background: #6ee0a8; box-shadow: 0 0 0 0 rgba(110,224,168,0.6); animation: ping 2.4s ease-out infinite; }
+        .pg-name { font-family: var(--font-display); font-size: 25px; font-weight: 560; letter-spacing: -0.2px; line-height: 1.08; margin-top: 7px; color: #fffdf8; }
+        .pg-desc { font-size: 13.5px; line-height: 1.45; color: #d7e8dd; margin-top: 4px; }
+        .pg-go { position: relative; z-index: 1; flex-shrink: 0; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); display: grid; place-items: center; transition: background 0.2s ease; }
+        .gate-primary:hover .pg-go { background: rgba(255,255,255,0.22); }
+        .pg-go svg { width: 19px; height: 19px; stroke: #fffdf8; }
+
+        /* Contacts */
+        .contact { background: var(--card); border: 1px solid var(--line); border-radius: 17px; padding: 16px; margin-bottom: 11px; box-shadow: var(--sh-sm); }
+        .contact-primary { border-color: rgba(22,96,74,0.32); background: linear-gradient(160deg, var(--pine-tint), var(--card) 70%); }
+        .contact-top { display: flex; align-items: center; gap: 13px; margin-bottom: 14px; position: relative; }
+        .monogram { width: 44px; height: 44px; border-radius: 13px; flex-shrink: 0; display: grid; place-items: center; font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--pine); background: var(--pine-soft); }
+        .contact-primary .monogram { background: var(--pine); color: #fbf8f0; }
+        .contact-name { font-size: 15.5px; font-weight: 700; line-height: 1.2; color: var(--ink); }
+        .contact-role { font-size: 12.5px; color: var(--ink-3); margin-top: 2px; }
+        .contact-langs { position: absolute; top: 1px; right: 0; display: flex; gap: 4px; }
+        .contact-langs span { font-size: 10px; font-weight: 700; letter-spacing: 0.3px; color: var(--ink-3); background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; }
+        .contact-actions { display: flex; gap: 9px; }
+        .cbtn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 14px; border-radius: 12px; font-family: var(--font-body); font-size: 13.5px; font-weight: 600; cursor: pointer; transition: transform 0.12s ease, filter 0.15s ease; }
+        .cbtn:active { transform: scale(0.97); }
+        .cbtn svg { width: 16px; height: 16px; flex-shrink: 0; }
+        .cbtn-call { background: var(--pine-soft); color: var(--pine-2); }
+        .cbtn-call svg { stroke: var(--pine-2); fill: none; }
+        .cbtn-call:hover { filter: brightness(0.98); }
+        .cbtn-wa { background: var(--wa-soft); color: var(--wa); }
+        .cbtn-wa svg { fill: var(--wa); }
 
         /* Notice */
-        .notice { margin-top: 32px; padding: 22px 20px; background: var(--c-surface); border-radius: 14px; }
-        .notice-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--c-warm-bg); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-        .notice-icon svg { width: 16px; height: 16px; }
-        .notice p { font-size: 13.5px; color: var(--c-text-secondary); line-height: 1.72; }
-        .notice p + p { margin-top: 10px; }
-        .notice .sign-off { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--c-border); font-size: 12px; color: var(--c-text-muted); line-height: 1.6; }
-        .sign-off-line { display: block; }
+        .notice { position: relative; margin-top: 30px; padding: 22px 22px 20px 26px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--sh-sm); overflow: hidden; }
+        .notice::before { content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; border-radius: 0 3px 3px 0; background: linear-gradient(var(--brass), var(--brass-soft)); }
+        .notice-title { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase; color: var(--brass); }
+        .notice p.note { font-family: var(--font-display); font-size: 15.5px; font-weight: 400; line-height: 1.62; color: var(--ink-2); margin-top: 12px; }
+        .notice .sign-off { margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--line-2); font-size: 11.5px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--ink-3); }
 
         /* Footer */
-        .footer { text-align: center; padding: 32px 20px 8px; }
-        .footer-logo { width: 28px; height: 28px; margin: 0 auto 6px; opacity: 0.3; }
-        .footer-logo img { width: 100%; height: 100%; object-fit: contain; }
-        .footer-text { font-size: 11px; color: var(--c-text-muted); letter-spacing: 0.2px; }
+        .footer { text-align: center; padding: 30px 22px 6px; }
+        .footer .arch { margin: 0 auto 14px; width: 120px; opacity: 0.5; }
+        .footer-logo { width: 30px; height: 30px; margin: 0 auto 9px; }
+        .footer-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; box-shadow: 0 1px 3px rgba(33,31,25,0.1), inset 0 0 0 1px rgba(33,31,25,0.05); }
+        .footer-text { font-family: var(--font-display); font-size: 12.5px; font-weight: 500; color: var(--ink-3); }
+        .footer-loc { font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-3); margin-top: 4px; opacity: 0.8; }
 
-        /* Shuttle panel */
-        .shuttle-details { border-top: 1px solid var(--c-border); }
-        .expand-toggle {
-            display: flex; align-items: center; justify-content: center; gap: 6px; padding: 12px 16px;
-            font-size: 13px; font-weight: 500; color: var(--c-accent); cursor: pointer; list-style: none; font-family: inherit;
-        }
-        .expand-toggle::-webkit-details-marker { display: none; }
-        .expand-toggle svg { width: 14px; height: 14px; transition: transform 0.2s ease; }
-        details[open] > .expand-toggle svg { transform: rotate(180deg); }
-        .shuttle-panel { padding: 0 16px 18px; }
-        .shuttle-provider { font-size: 13px; font-weight: 600; color: var(--c-text); margin-bottom: 2px; }
-        .shuttle-desc { font-size: 12px; color: var(--c-text-muted); margin-bottom: 14px; }
-        .driver-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
-        .driver-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .plate {
-            padding: 5px 8px; background: var(--c-bg); border: 2px solid #1f2937; border-radius: 4px;
-            font-family: 'SF Mono','Menlo','Consolas','Courier New',monospace;
-            font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; color: #111827; white-space: nowrap; flex-shrink: 0;
-        }
-        .driver-name { flex: 1; font-size: 13px; font-weight: 500; color: var(--c-text); min-width: 0; }
-        .btn-sm { flex: none; padding: 7px 12px; font-size: 12px; gap: 5px; }
-        .btn-sm svg { width: 13px; height: 13px; }
+        /* Reveal on load */
+        @keyframes rise { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+        @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(22,96,74,0.45); } 70%, 100% { box-shadow: 0 0 0 7px rgba(22,96,74,0); } }
+        @keyframes ping-w { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.55); } 70%, 100% { box-shadow: 0 0 0 6px rgba(255,255,255,0); } }
+        .reveal { opacity: 0; animation: rise 0.7s cubic-bezier(0.2,0.7,0.2,1) forwards; animation-delay: var(--d, 0s); }
 
         /* Focus */
-        a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
-        .entrance-card:focus-visible { box-shadow: 0 0 0 4px rgba(37,99,235,0.12); }
+        a:focus-visible, button:focus-visible { outline: 2px solid var(--pine); outline-offset: 3px; border-radius: 8px; }
 
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
-        @supports (padding-bottom: env(safe-area-inset-bottom)) { .page { padding-bottom: calc(48px + env(safe-area-inset-bottom)); } }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; }
+        }
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .page { padding-bottom: calc(40px + env(safe-area-inset-bottom)); }
+        }
     </style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link" data-i18n="skip">Skip to content</a>
+    <div class="grain" aria-hidden="true"></div>
 
     <div class="page">
 
-        <div class="hero">
-            <img src="entrance-photo.webp" alt="Sandhya Infocity main entrance" loading="eager" fetchpriority="high" width="662" height="420">
-        </div>
-
-        <header class="header">
-            <div class="header-logo">
-                <img src="sandhya-infocity.png" alt="Sandhya Infocity" width="44" height="44">
+        <header class="topbar reveal" style="--d:0s">
+            <div class="brand">
+                <img class="brand-mark" src="sandhya-infocity.png" alt="Sandhya Infocity" width="32" height="32">
+                <span class="brand-name">Sandhya Infocity</span>
             </div>
-            <h1 data-i18n="page-title">Back Gate Guide</h1>
-            <p class="subtitle" data-i18n="page-subtitle">Navigate to the nearest entrance</p>
             <div class="lang-toggle" role="group" aria-label="Language">
                 <button class="lang-btn" data-lang="en" aria-pressed="true" type="button">EN</button>
                 <button class="lang-btn" data-lang="ta" aria-pressed="false" type="button">தமிழ்</button>
             </div>
         </header>
 
+        <section class="hero reveal" style="--d:0.06s">
+            <div class="hero-frame">
+                <img src="main-gate.webp" alt="Sandhya Infocity main gate, now open" loading="eager" fetchpriority="high" width="1280" height="960">
+                <div class="hero-scrim"></div>
+                <span class="hero-kicker" data-i18n="page-kicker">Navallur · Chennai</span>
+                <div class="hero-status">
+                    <span class="hs-item hs-open"><span class="dot"></span><span data-i18n="board-open">Main Gate open</span></span>
+                    <span class="hs-item hs-closed"><span class="dot"></span><span data-i18n="board-closed">Back Entrance 1 closed</span></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro reveal" style="--d:0.12s">
+            <p class="eyebrow" data-i18n="page-eyebrow">Campus Access</p>
+            <h1 class="title" data-i18n="page-title">Entrance Guide</h1>
+            <p class="subtitle" data-i18n="page-subtitle">Find the right gate for your visit.</p>
+            <svg class="arch" viewBox="0 0 145 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M5 24 V14 A11 11 0 0 1 27 14 V24 M33 24 V14 A11 11 0 0 1 55 14 V24 M61 24 V14 A11 11 0 0 1 83 14 V24 M89 24 V14 A11 11 0 0 1 111 14 V24 M117 24 V14 A11 11 0 0 1 139 14 V24"/></svg>
+        </section>
+
         <main class="content" id="main">
 
-            <div class="section-label" data-i18n="section-directions">Directions</div>
-
-            <div class="filter-bar" role="group" aria-label="Filter directions">
-                <div class="filter-row">
-                    <button class="filter-badge" data-filter="car" aria-pressed="false" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.988-1.106a48.554 48.554 0 0 0-10.024 0 1.106 1.106 0 0 0-.988 1.106v7.635m12-6.677v6.677m0-6.677H4.5v6.677"/></svg>
-                        <span data-i18n="filter-car">Car</span>
-                    </button>
-                    <button class="filter-badge" data-filter="bike" aria-pressed="false" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5c1.036 0 1.875.84 1.875 1.875S13.036 8.25 12 8.25 10.125 7.41 10.125 6.375 10.964 4.5 12 4.5ZM9 10.5l2.25 1.5L15 9m-6.75 5.25 1.5 4.5m4.5-4.5-1.5 4.5m-6-6.75L4.5 12m13.5 0-2.25.75"/><circle cx="5.25" cy="17.25" r="2.25"/><circle cx="18.75" cy="17.25" r="2.25"/></svg>
-                        <span data-i18n="filter-bike">Bike</span>
-                    </button>
-                </div>
-                <div class="filter-row filter-row-single">
-                    <button class="filter-badge" data-filter="walking" aria-pressed="false" type="button">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><g stroke-linecap="round" stroke-linejoin="round"><path d="m6 12.5l1.738-2.607a2 2 0 0 1 .672-.627l2.189-1.251a1.94 1.94 0 0 1 1.83-.05c.656.328 1.037 1.021 1.317 1.7C14.206 10.781 15.398 12 18 12"/><path d="m13 9l-1.223 5.595M10.5 8.5l-.725 3.265a2 2 0 0 0 .724 2.012L14 16.5l1.5 4.5m-6-5L9 17.5l-2.5 3m8.5-16a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0"/></g></svg>
-                        <span data-i18n="filter-pedestrian">Pedestrian</span>
-                    </button>
-                </div>
+            <p class="arrive-label reveal" style="--d:0.2s" data-i18n="arrive-label">Arriving by</p>
+            <div class="chips reveal" style="--d:0.24s" role="group" aria-label="Filter gates by how you arrive">
+                <button class="chip" data-filter="all" aria-pressed="true" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                    <span data-i18n="filter-all">All</span>
+                </button>
+                <button class="chip" data-filter="car" aria-pressed="false" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.988-1.106a48.554 48.554 0 0 0-10.024 0 1.106 1.106 0 0 0-.988 1.106v7.635m12-6.677v6.677m0-6.677H4.5v6.677"/></svg>
+                    <span data-i18n="filter-car">Car</span>
+                </button>
+                <button class="chip" data-filter="bike" aria-pressed="false" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5c1.036 0 1.875.84 1.875 1.875S13.036 8.25 12 8.25 10.125 7.41 10.125 6.375 10.964 4.5 12 4.5ZM9 10.5l2.25 1.5L15 9m-6.75 5.25 1.5 4.5m4.5-4.5-1.5 4.5m-6-6.75L4.5 12m13.5 0-2.25.75"/><circle cx="5.25" cy="17.25" r="2.25"/><circle cx="18.75" cy="17.25" r="2.25"/></svg>
+                    <span data-i18n="filter-bike">Bike</span>
+                </button>
+                <button class="chip" data-filter="walking" aria-pressed="false" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><g stroke-linecap="round" stroke-linejoin="round"><path d="m6 12.5l1.738-2.607a2 2 0 0 1 .672-.627l2.189-1.251a1.94 1.94 0 0 1 1.83-.05c.656.328 1.037 1.021 1.317 1.7C14.206 10.781 15.398 12 18 12"/><path d="m13 9l-1.223 5.595M10.5 8.5l-.725 3.265a2 2 0 0 0 .724 2.012L14 16.5l1.5 4.5m-6-5L9 17.5l-2.5 3m8.5-16a1.5 1.5 0 1 1-3 0a1.5 1.5 0 0 1 3 0"/></g></svg>
+                    <span data-i18n="filter-pedestrian">Pedestrian</span>
+                </button>
+                <button class="chip" data-filter="vendors" aria-pressed="false" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+                    <span data-i18n="filter-vendors">Vendors</span>
+                </button>
             </div>
 
-            <!-- Entrance 1 — Car only -->
-            <a href="https://www.google.com/maps/dir/?api=1&destination=12.847699,80.223052&travelmode=driving"
-               class="entrance-card" data-track="entrance1" data-category="car" target="_blank" rel="noopener noreferrer">
-                <div class="entrance-card-image">
-                    <img src="back-entrance-1.webp" alt="Back Entrance 1, Thalambur Rd next to ANBU Bakery" loading="eager" width="1246" height="674">
-                    <span class="card-badge" data-i18n="badge-entrance1">Entrance 1</span>
-                </div>
-                <div class="entrance-card-body">
-                    <div class="entrance-card-info">
-                        <h3 data-i18n="entrance1-title">Back Entrance 1</h3>
-                        <p data-i18n="entrance1-desc">Thalambur Rd · Next to ANBU Bakery</p>
-                        <span class="block-badge">B1</span><span class="block-badge badge-hcl">HCL</span>
-                    </div>
-                    <span class="card-cta" aria-hidden="true">
-                        <span data-i18n="maps">Maps</span>
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-                    </span>
-                </div>
-            </a>
+            <div class="gates">
 
-            <!-- Entrance 2 — Car and Bike -->
-            <a href="https://www.google.com/maps/dir/?api=1&destination=12.852392,80.224223&travelmode=driving"
-               class="entrance-card" data-track="entrance2" data-category="car bike" target="_blank" rel="noopener noreferrer">
-                <div class="entrance-card-image">
-                    <img src="back-entrance-2.webp" alt="Back Entrance 2, lane past main gate near Geetham Restaurant" loading="lazy" width="652" height="386">
-                    <span class="card-badge" data-i18n="badge-entrance2">Entrance 2</span>
-                </div>
-                <div class="entrance-card-body">
-                    <div class="entrance-card-info">
-                        <h3 data-i18n="entrance2-title">Back Entrance 2</h3>
-                        <p data-i18n="entrance2-desc">Lane Past Main Gate · Near Geetham Restaurant</p>
-                        <span class="block-badge">B4</span><span class="block-badge badge-fujitsu">Fujitsu</span><span class="block-badge badge-tds">TDS</span>
-                    </div>
-                    <span class="card-cta" aria-hidden="true">
-                        <span data-i18n="maps">Maps</span>
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-                    </span>
-                </div>
-            </a>
-
-            <!-- A/C Shuttle — Pedestrian category -->
-            <div class="entrance-card" data-category="walking">
+                <!-- Main Gate: open, primary call to action -->
                 <a href="https://www.google.com/maps/dir/?api=1&destination=12.850022,80.226467&travelmode=driving"
-                   class="entrance-card-link" data-track="vehicle_pickup" target="_blank" rel="noopener noreferrer">
-                    <div class="entrance-card-image">
-                        <img src="Van-photo.webp" alt="A/C shuttle pickup at main entrance, drop-off near podium" loading="lazy" width="842" height="428">
-                        <span class="card-badge" data-i18n="badge-shuttle">A/C Shuttle</span>
+                   class="gate-primary reveal" style="--d:0.3s" data-category="car bike walking" data-track="main_gate" target="_blank" rel="noopener noreferrer">
+                    <svg class="pg-leaf" viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M60 8 C 96 40, 100 96, 60 142 C 20 96, 24 40, 60 8 Z"/><path d="M60 20 L 60 132"/><path d="M60 50 C 49 56, 43 63, 39 74"/><path d="M60 50 C 71 56, 77 63, 81 74"/><path d="M60 82 C 50 88, 45 95, 42 106"/><path d="M60 82 C 70 88, 75 95, 78 106"/></svg>
+                    <div class="pg-main">
+                        <span class="pg-status"><span class="live-dot"></span><span data-i18n="status-open">Open now</span></span>
+                        <h2 class="pg-name" data-i18n="maingate-title">Main Gate</h2>
+                        <p class="pg-desc" data-i18n="maingate-desc">Open to all. Walk, ride or drive in.</p>
                     </div>
-                    <div class="entrance-card-body">
-                        <div class="entrance-card-info">
-                            <h3 data-i18n="shuttle-title">A/C Shuttle Pickup</h3>
-                            <p data-i18n="shuttle-desc">Board at Main Entrance · Drop-off near Podium</p>
+                    <span class="pg-go" aria-hidden="true">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                    </span>
+                </a>
+
+                <!-- Back Entrance 2: open, alternate route -->
+                <a href="https://www.google.com/maps/dir/?api=1&destination=12.852392,80.224223&travelmode=driving"
+                   class="gate-photo reveal" style="--d:0.36s" data-category="car bike vendors" data-track="entrance2" target="_blank" rel="noopener noreferrer">
+                    <div class="gate-media">
+                        <img src="back-entrance-2.webp" alt="Back Entrance 2, lane past the main gate near Geetham Restaurant" loading="lazy" width="652" height="386">
+                        <span class="tag tag--quiet"><span class="live-dot"></span><span data-i18n="open">Open</span></span>
+                    </div>
+                    <div class="gate-body">
+                        <div class="gate-head">
+                            <h3 class="gate-name" data-i18n="entrance2-title">Back Entrance 2</h3>
+                            <span class="gate-go" aria-hidden="true">
+                                <span data-i18n="directions">Directions</span>
+                                <svg fill="none" viewBox="0 0 24 24" stroke-width="2.2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                            </span>
                         </div>
-                        <span class="card-cta" aria-hidden="true">
-                            <span data-i18n="maps">Maps</span>
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-                        </span>
+                        <p class="gate-desc" data-i18n="entrance2-desc">Lane past the main gate, near Geetham Restaurant.</p>
+                        <div class="tags-row">
+                            <span class="btag">B4</span><span class="btag btag-fujitsu">Fujitsu</span><span class="btag btag-tds">TDS</span>
+                        </div>
                     </div>
                 </a>
-                <details class="shuttle-details">
-                    <summary class="expand-toggle" data-track="expand_shuttle">
-                        <span data-i18n="view-shuttle">View shuttle details</span>
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-                    </summary>
-                    <div class="shuttle-panel">
-                        <div class="shuttle-provider">Cosmo Cabs</div>
-                        <div class="shuttle-desc" data-i18n="tempo-desc">3 Tempo vehicles · 18+1 seater</div>
-                        <div class="driver-row">
-                            <span class="plate">TN 21 BE 5757</span>
-                            <span class="driver-name">Ashok</span>
-                            <a href="tel:+919551532020" class="btn btn-call btn-sm" data-track="call_ashok" aria-label="Call Ashok">
-                                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                                <span data-i18n="call">Call</span>
-                            </a>
-                        </div>
-                        <div class="driver-row">
-                            <span class="plate">TN 14 AK 2857</span>
-                            <span class="driver-name">Siva</span>
-                            <a href="tel:+916385609616" class="btn btn-call btn-sm" data-track="call_siva" aria-label="Call Siva">
-                                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                                <span data-i18n="call">Call</span>
-                            </a>
-                        </div>
-                        <div class="driver-row">
-                            <span class="plate">TN 07 DJ 5011</span>
-                            <span class="driver-name">Vijay</span>
-                            <a href="tel:+918667783223" class="btn btn-call btn-sm" data-track="call_vijay" aria-label="Call Vijay">
-                                <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
-                                <span data-i18n="call">Call</span>
-                            </a>
-                        </div>
-                    </div>
-                </details>
-            </div>
 
-            <!-- Pedestrian Walking Path -->
-            <a href="https://www.google.com/maps/dir/?api=1&destination=12.852392,80.224223&travelmode=walking"
-               class="entrance-card" data-category="walking" data-track="pedestrian_walk" target="_blank" rel="noopener noreferrer">
-                <div class="entrance-card-image">
-                    <img src="back-entrance-2.webp" alt="Pedestrian walking path to back entrance" loading="lazy" width="652" height="386">
-                    <span class="card-badge" data-i18n="badge-walking">Walking Path</span>
-                </div>
-                <div class="entrance-card-body">
-                    <div class="entrance-card-info">
-                        <h3 data-i18n="walking-title">Pedestrian Walking Path</h3>
-                        <p data-i18n="walking-desc">North Side Entrance · ~8 min walk</p>
-                        <span class="block-badge">B4</span>
+                <!-- Back Entrance 1: closed for paver work -->
+                <div class="gate-photo gate--closed reveal" style="--d:0.42s" data-category="car" data-track="entrance1_closed" aria-disabled="true">
+                    <div class="gate-media">
+                        <img src="back-entrance-1.webp" alt="Back Entrance 1, closed for paver work" loading="lazy" width="1246" height="674">
+                        <span class="tag tag--closed"><span data-i18n="status-closed">Closed</span></span>
                     </div>
-                    <span class="card-cta" aria-hidden="true">
-                        <span data-i18n="maps">Maps</span>
-                        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-                    </span>
+                    <div class="gate-body">
+                        <div class="gate-head">
+                            <h3 class="gate-name" data-i18n="entrance1-title">Back Entrance 1</h3>
+                        </div>
+                        <p class="gate-desc" data-i18n="entrance1-desc">Closed for paver work.</p>
+                        <p class="closed-hint" data-i18n="entrance1-hint">Please use the Main Gate or Back Entrance 2.</p>
+                        <div class="tags-row">
+                            <span class="btag">B1</span><span class="btag btag-hcl">HCL</span>
+                        </div>
+                    </div>
                 </div>
-            </a>
+
+            </div>
 
             <!-- Contacts -->
-            <div class="section-label" data-i18n="section-help">Need Help?</div>
+            <div class="section-label reveal" style="--d:0.5s"><span class="rule"></span><span data-i18n="section-help">Need help?</span><span class="rule"></span></div>
 
-            <div class="contact-card">
+            <div class="contact reveal" style="--d:0.54s">
                 <div class="contact-top">
-                    <div class="contact-avatar"><svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+                    <div class="monogram" aria-hidden="true">A</div>
                     <div><div class="contact-name">Abdul</div><div class="contact-role" data-i18n="role-security">Security Head</div></div>
-                    <div class="lang-badge"><span>EN</span><span>TA</span></div>
+                    <div class="contact-langs"><span>EN</span><span>த</span></div>
                 </div>
                 <div class="contact-actions">
-                    <a href="tel:+919841172866" class="btn btn-call" data-track="call_abdul" aria-label="Call Abdul">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    <a href="tel:+919841172866" class="cbtn cbtn-call" data-track="call_abdul" aria-label="Call Abdul">
+                        <svg viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
                         <span data-i18n="call">Call</span>
                     </a>
-                    <a href="https://wa.me/919841172866" class="btn btn-wa" data-track="wa_abdul" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Abdul">
+                    <a href="https://wa.me/919841172866" class="cbtn cbtn-wa" data-track="wa_abdul" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Abdul">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="contact-card">
+            <div class="contact reveal" style="--d:0.58s">
                 <div class="contact-top">
-                    <div class="contact-avatar"><svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+                    <div class="monogram" aria-hidden="true">A</div>
                     <div><div class="contact-name">Akaram</div><div class="contact-role" data-i18n="role-gate">Gate Supervisor</div></div>
-                    <div class="lang-badge"><span>EN</span><span>TA</span></div>
+                    <div class="contact-langs"><span>EN</span><span>த</span></div>
                 </div>
                 <div class="contact-actions">
-                    <a href="tel:+919176641559" class="btn btn-call" data-track="call_akaram" aria-label="Call Akaram">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    <a href="tel:+919176641559" class="cbtn cbtn-call" data-track="call_akaram" aria-label="Call Akaram">
+                        <svg viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
                         <span data-i18n="call">Call</span>
                     </a>
-                    <a href="https://wa.me/919176641559" class="btn btn-wa" data-track="wa_akaram" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Akaram">
+                    <a href="https://wa.me/919176641559" class="cbtn cbtn-wa" data-track="wa_akaram" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Akaram">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="contact-card primary">
+            <div class="contact contact-primary reveal" style="--d:0.62s">
                 <div class="contact-top">
-                    <div class="contact-avatar"><svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+                    <div class="monogram" aria-hidden="true">D</div>
                     <div><div class="contact-name">Dinesh</div><div class="contact-role" data-i18n="role-helpdesk">24/7 Helpdesk</div></div>
-                    <div class="lang-badge"><span>EN</span></div>
+                    <div class="contact-langs"><span>EN</span></div>
                 </div>
                 <div class="contact-actions">
-                    <a href="tel:+917729880644" class="btn btn-call" data-track="call_dinesh" aria-label="Call Dinesh">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                    <a href="tel:+917729880644" class="cbtn cbtn-call" data-track="call_dinesh" aria-label="Call Dinesh">
+                        <svg viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
                         <span data-i18n="call">Call</span>
                     </a>
-                    <a href="https://wa.me/917729880644" class="btn btn-wa" data-track="wa_dinesh" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Dinesh">
+                    <a href="https://wa.me/917729880644" class="cbtn cbtn-wa" data-track="wa_dinesh" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Dinesh">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                         WhatsApp
                     </a>
                 </div>
             </div>
 
-            <div class="notice">
-                <div class="notice-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
-                <p data-i18n="notice-p1">We sincerely apologize for any inconvenience caused by the temporary changes to entrance access. This guide has been created to help you reach the campus as smoothly as possible.</p>
-                <p data-i18n="notice-p2">Your patience and understanding mean a great deal to us. We are committed to restoring seamless access at the earliest.</p>
-                <div class="sign-off">
-                    <span class="sign-off-line" data-i18n="sign-off-1">Warm regards,</span>
-                    <span class="sign-off-line" data-i18n="sign-off-2">Sandhya Infocity · Facility Management</span>
-                </div>
-            </div>
+            <aside class="notice reveal" style="--d:0.66s">
+                <p class="notice-title" data-i18n="notice-title">A note from Facility Management</p>
+                <p class="note" data-i18n="notice-p1">The Main Gate is open. Back Entrance 1 is closed while we lay a new paver road and will reopen shortly.</p>
+                <p class="note" data-i18n="notice-p2">Please use the Main Gate or Back Entrance 2 in the meantime. We appreciate your patience.</p>
+                <div class="sign-off" data-i18n="sign-off">Facility Management · Sandhya Infocity</div>
+            </aside>
 
         </main>
 
-        <footer class="footer">
-            <div class="footer-logo"><img src="sandhya-infocity.png" alt="" width="28" height="28"></div>
+        <footer class="footer reveal" style="--d:0.7s">
+            <svg class="arch" viewBox="0 0 145 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M5 24 V14 A11 11 0 0 1 27 14 V24 M33 24 V14 A11 11 0 0 1 55 14 V24 M61 24 V14 A11 11 0 0 1 83 14 V24 M89 24 V14 A11 11 0 0 1 111 14 V24 M117 24 V14 A11 11 0 0 1 139 14 V24"/></svg>
+            <div class="footer-logo"><img src="sandhya-infocity.png" alt="" width="27" height="27"></div>
             <div class="footer-text" data-i18n="footer">Sandhya Infocity · Facility Management</div>
+            <div class="footer-loc" data-i18n="footer-loc">Navallur · Chennai · Tamil Nadu</div>
         </footer>
 
     </div>
@@ -464,70 +464,78 @@
 
             var STRINGS = {
                 en: {
-                    'page-title': 'Back Gate Guide',
-                    'page-subtitle': 'Navigate to the nearest entrance',
-                    'section-directions': 'Directions',
+                    'skip': 'Skip to content',
+                    'page-kicker': 'Navallur · Chennai',
+                    'page-eyebrow': 'Campus Access',
+                    'page-title': 'Entrance Guide',
+                    'page-subtitle': 'Find the right gate for your visit.',
+                    'board-open': 'Main Gate open',
+                    'board-closed': 'Back Entrance 1 closed',
+                    'arrive-label': 'Arriving by',
+                    'filter-all': 'All',
                     'filter-car': 'Car',
                     'filter-bike': 'Bike',
                     'filter-pedestrian': 'Pedestrian',
-                    'badge-entrance1': 'Entrance 1',
+                    'filter-vendors': 'Vendors',
+                    'status-open': 'Open now',
+                    'maingate-title': 'Main Gate',
+                    'maingate-desc': 'Open to all. Walk, ride or drive in.',
+                    'directions': 'Directions',
+                    'open': 'Open',
+                    'status-closed': 'Closed',
                     'entrance1-title': 'Back Entrance 1',
-                    'entrance1-desc': 'Thalambur Rd \u00b7 Next to ANBU Bakery',
-                    'badge-entrance2': 'Entrance 2',
+                    'entrance1-desc': 'Closed for paver work.',
+                    'entrance1-hint': 'Please use the Main Gate or Back Entrance 2.',
                     'entrance2-title': 'Back Entrance 2',
-                    'entrance2-desc': 'Lane Past Main Gate \u00b7 Near Geetham Restaurant',
-                    'badge-shuttle': 'A/C Shuttle',
-                    'shuttle-title': 'A/C Shuttle Pickup',
-                    'shuttle-desc': 'Board at Main Entrance \u00b7 Drop-off near Podium',
-                    'badge-walking': 'Walking Path',
-                    'walking-title': 'Pedestrian Walking Path',
-                    'walking-desc': 'North Side Entrance \u00b7 ~8 min walk',
-                    'maps': 'Maps',
-                    'view-shuttle': 'View shuttle details',
-                    'tempo-desc': '3 Tempo vehicles \u00b7 18+1 seater',
-                    'call': 'Call',
-                    'section-help': 'Need Help?',
+                    'entrance2-desc': 'Lane past the main gate, near Geetham Restaurant.',
+                    'section-help': 'Need help?',
                     'role-security': 'Security Head',
                     'role-gate': 'Gate Supervisor',
                     'role-helpdesk': '24/7 Helpdesk',
-                    'notice-p1': 'We sincerely apologize for any inconvenience caused by the temporary changes to entrance access. This guide has been created to help you reach the campus as smoothly as possible.',
-                    'notice-p2': 'Your patience and understanding mean a great deal to us. We are committed to restoring seamless access at the earliest.',
-                    'sign-off-1': 'Warm regards,',
-                    'sign-off-2': 'Sandhya Infocity \u00b7 Facility Management',
-                    'footer': 'Sandhya Infocity \u00b7 Facility Management'
+                    'call': 'Call',
+                    'notice-title': 'A note from Facility Management',
+                    'notice-p1': 'The Main Gate is open. Back Entrance 1 is closed while we lay a new paver road and will reopen shortly.',
+                    'notice-p2': 'Please use the Main Gate or Back Entrance 2 in the meantime. We appreciate your patience.',
+                    'sign-off': 'Facility Management · Sandhya Infocity',
+                    'footer': 'Sandhya Infocity · Facility Management',
+                    'footer-loc': 'Navallur · Chennai · Tamil Nadu'
                 },
                 ta: {
-                    'page-title': '\u0baa\u0bbf\u0ba9\u0bcd \u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bcd \u0bb5\u0bb4\u0bbf\u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf',
-                    'page-subtitle': '\u0b85\u0bb0\u0bc1\u0b95\u0bbf\u0bb2\u0bc1\u0bb3\u0bcd\u0bb3 \u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bc1\u0b95\u0bcd\u0b95\u0bc1\u0b9a\u0bcd \u0b9a\u0bc6\u0bb2\u0bcd\u0bb2\u0bc1\u0b99\u0bcd\u0b95\u0bb3\u0bcd',
-                    'section-directions': '\u0bb5\u0bb4\u0bbf\u0b95\u0bb3\u0bcd',
-                    'filter-car': '\u0b95\u0bbe\u0bb0\u0bcd',
-                    'filter-bike': '\u0baa\u0bc8\u0b95\u0bcd',
-                    'filter-pedestrian': '\u0ba8\u0b9f\u0bc8\u0baa\u0baf\u0ba3\u0bbf',
-                    'badge-entrance1': '\u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bc1 1',
-                    'entrance1-title': '\u0baa\u0bbf\u0ba9\u0bcd \u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bc1 1',
-                    'entrance1-desc': 'Thalambur Rd \u00b7 ANBU Bakery \u0b85\u0bb0\u0bc1\u0b95\u0bbf\u0bb2\u0bcd',
-                    'badge-entrance2': '\u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bc1 2',
-                    'entrance2-title': '\u0baa\u0bbf\u0ba9\u0bcd \u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bc1 2',
-                    'entrance2-desc': '\u0baa\u0bbf\u0bb0\u0ba4\u0bbe\u0ba9 \u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bc8\u0b95\u0bcd \u0b95\u0b9f\u0ba8\u0bcd\u0ba4 \u0baa\u0bbe\u0ba4\u0bc8 \u00b7 Geetham Restaurant \u0b85\u0bb0\u0bc1\u0b95\u0bbf\u0bb2\u0bcd',
-                    'badge-shuttle': '\u0b8f\u0b9a\u0bbf \u0bb7\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd',
-                    'shuttle-title': '\u0b8f\u0b9a\u0bbf \u0bb7\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd \u0baa\u0bbf\u0b95\u0bcd\u0b85\u0baa\u0bcd',
-                    'shuttle-desc': '\u0baa\u0bbf\u0bb0\u0ba4\u0bbe\u0ba9 \u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bbf\u0bb2\u0bcd \u0b8f\u0bb1\u0bb5\u0bc1\u0bae\u0bcd \u00b7 Podium \u0b85\u0bb0\u0bc1\u0b95\u0bbf\u0bb2\u0bcd \u0b87\u0bb1\u0b95\u0bcd\u0b95\u0bae\u0bcd',
-                    'badge-walking': '\u0ba8\u0b9f\u0bc8\u0baa\u0bcd\u0baa\u0bbe\u0ba4\u0bc8',
-                    'walking-title': '\u0ba8\u0b9f\u0bc8\u0baa\u0bcd\u0baa\u0bbe\u0ba4\u0bc8',
-                    'walking-desc': '\u0bb5\u0b9f\u0b95\u0bcd\u0b95\u0bc1\u0baa\u0bcd\u0baa\u0bc1\u0bb1 \u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bc1 \u00b7 ~8 \u0ba8\u0bbf\u0bae\u0bbf\u0b9f \u0ba8\u0b9f\u0bc8',
-                    'maps': '\u0bb5\u0bb0\u0bc8\u0baa\u0b9f\u0bae\u0bcd',
-                    'view-shuttle': '\u0bb7\u0b9f\u0bcd\u0b9f\u0bbf\u0bb2\u0bcd \u0bb5\u0bbf\u0bb5\u0bb0\u0b99\u0bcd\u0b95\u0bb3\u0bcd',
-                    'tempo-desc': '3 \u0b9f\u0bc6\u0bae\u0bcd\u0baa\u0bcb \u0bb5\u0bbe\u0b95\u0ba9\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u00b7 18+1 \u0b87\u0bb0\u0bc1\u0b95\u0bcd\u0b95\u0bc8',
-                    'call': '\u0b85\u0bb4\u0bc8',
-                    'section-help': '\u0b89\u0ba4\u0bb5\u0bbf \u0ba4\u0bc7\u0bb5\u0bc8\u0baf\u0bbe?',
-                    'role-security': '\u0baa\u0bbe\u0ba4\u0bc1\u0b95\u0bbe\u0baa\u0bcd\u0baa\u0bc1 \u0ba4\u0bb2\u0bc8\u0bb5\u0bb0\u0bcd',
-                    'role-gate': '\u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bcd \u0bae\u0bc7\u0bb1\u0bcd\u0baa\u0bbe\u0bb0\u0bcd\u0bb5\u0bc8\u0baf\u0bbe\u0bb3\u0bb0\u0bcd',
-                    'role-helpdesk': '24/7 \u0b89\u0ba4\u0bb5\u0bbf \u0bae\u0bc8\u0baf\u0bae\u0bcd',
-                    'notice-p1': '\u0ba8\u0bc1\u0bb4\u0bc8\u0bb5\u0bbe\u0baf\u0bbf\u0bb2\u0bcd \u0b85\u0ba3\u0bc1\u0b95\u0bb2\u0bbf\u0bb2\u0bcd \u0ba4\u0bb1\u0bcd\u0b95\u0bbe\u0bb2\u0bbf\u0b95 \u0bae\u0bbe\u0bb1\u0bcd\u0bb1\u0b99\u0bcd\u0b95\u0bb3\u0bbe\u0bb2\u0bcd \u0b8f\u0bb1\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b9a\u0bbf\u0bb0\u0bae\u0ba4\u0bcd\u0ba4\u0bbf\u0bb1\u0bcd\u0b95\u0bc1 \u0bae\u0ba9\u0bae\u0bbe\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4 \u0bae\u0ba9\u0bcd\u0ba9\u0bbf\u0baa\u0bcd\u0baa\u0bc1 \u0b95\u0bc7\u0b9f\u0bcd\u0b9f\u0bc1\u0b95\u0bcd\u0b95\u0bca\u0bb3\u0bcd\u0b95\u0bbf\u0bb1\u0bcb\u0bae\u0bcd. \u0bb5\u0bb3\u0bbe\u0b95\u0ba4\u0bcd\u0ba4\u0bc8 \u0b8e\u0bb3\u0bbf\u0ba4\u0bbe\u0b95 \u0b85\u0b9f\u0bc8\u0baf \u0b87\u0ba8\u0bcd\u0ba4 \u0bb5\u0bb4\u0bbf\u0b95\u0bbe\u0b9f\u0bcd\u0b9f\u0bbf \u0b89\u0bb0\u0bc1\u0bb5\u0bbe\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f\u0bc1\u0bb3\u0bcd\u0bb3\u0ba4\u0bc1.',
-                    'notice-p2': '\u0b89\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0baa\u0bca\u0bb1\u0bc1\u0bae\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0baa\u0bc1\u0bb0\u0bbf\u0ba4\u0bb2\u0bc1\u0bae\u0bcd \u0b8e\u0b99\u0bcd\u0b95\u0bb3\u0bc1\u0b95\u0bcd\u0b95\u0bc1 \u0bae\u0bbf\u0b95\u0bb5\u0bc1\u0bae\u0bcd \u0bae\u0bc1\u0b95\u0bcd\u0b95\u0bbf\u0baf\u0bae\u0bcd. \u0bb5\u0bbf\u0bb0\u0bc8\u0bb5\u0bbf\u0bb2\u0bcd \u0ba4\u0b9f\u0bc8\u0baf\u0bb1\u0bcd\u0bb1 \u0b85\u0ba3\u0bc1\u0b95\u0bb2\u0bc8 \u0bae\u0bc0\u0b9f\u0bcd\u0b9f\u0bc6\u0b9f\u0bc1\u0b95\u0bcd\u0b95 \u0ba8\u0bbe\u0b99\u0bcd\u0b95\u0bb3\u0bcd \u0b89\u0bb1\u0bc1\u0ba4\u0bbf\u0baa\u0bc2\u0ba3\u0bcd\u0b9f\u0bc1\u0bb3\u0bcd\u0bb3\u0bcb\u0bae\u0bcd.',
-                    'sign-off-1': '\u0b85\u0ba9\u0bcd\u0baa\u0bc1\u0b9f\u0ba9\u0bcd,',
-                    'sign-off-2': '\u0b9a\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe \u0b87\u0ba9\u0bcd\u0baa\u0bcb\u0b9a\u0bbf\u0b9f\u0bcd\u0b9f\u0bbf \u00b7 \u0bb5\u0b9a\u0ba4\u0bbf \u0bae\u0bc7\u0bb2\u0bbe\u0ba3\u0bcd\u0bae\u0bc8',
-                    'footer': '\u0b9a\u0ba8\u0bcd\u0ba4\u0bbf\u0baf\u0bbe \u0b87\u0ba9\u0bcd\u0baa\u0bcb\u0b9a\u0bbf\u0b9f\u0bcd\u0b9f\u0bbf \u00b7 \u0bb5\u0b9a\u0ba4\u0bbf \u0bae\u0bc7\u0bb2\u0bbe\u0ba3\u0bcd\u0bae\u0bc8'
+                    'skip': 'உள்ளடக்கத்திற்குச் செல்க',
+                    'page-kicker': 'நாவல்லூர் · சென்னை',
+                    'page-eyebrow': 'வளாக அணுகல்',
+                    'page-title': 'நுழைவு வழிகாட்டி',
+                    'page-subtitle': 'உங்கள் வருகைக்கு ஏற்ற வாயிலைத் தேர்ந்தெடுக்கவும்.',
+                    'board-open': 'முதன்மை வாயில் திறந்துள்ளது',
+                    'board-closed': 'பின் நுழைவு 1 மூடப்பட்டுள்ளது',
+                    'arrive-label': 'எவ்வாறு வருகிறீர்கள்',
+                    'filter-all': 'அனைத்தும்',
+                    'filter-car': 'கார்',
+                    'filter-bike': 'பைக்',
+                    'filter-pedestrian': 'நடைபயணி',
+                    'filter-vendors': 'விற்பனையாளர்',
+                    'status-open': 'இப்போது திறந்துள்ளது',
+                    'maingate-title': 'முதன்மை வாயில்',
+                    'maingate-desc': 'அனைவருக்கும் திறந்துள்ளது. நடந்தோ, பைக்கிலோ, காரிலோ உள்ளே வரலாம்.',
+                    'directions': 'வழிகாட்டு',
+                    'open': 'திறந்துள்ளது',
+                    'status-closed': 'மூடப்பட்டுள்ளது',
+                    'entrance1-title': 'பின் நுழைவு 1',
+                    'entrance1-desc': 'பேவர் பணிக்காக மூடப்பட்டுள்ளது.',
+                    'entrance1-hint': 'முதன்மை வாயில் அல்லது பின் நுழைவு 2 ஐப் பயன்படுத்தவும்.',
+                    'entrance2-title': 'பின் நுழைவு 2',
+                    'entrance2-desc': 'முதன்மை வாயிலைக் கடந்த பாதை, Geetham Restaurant அருகில்.',
+                    'section-help': 'உதவி தேவையா?',
+                    'role-security': 'பாதுகாப்புத் தலைவர்',
+                    'role-gate': 'வாயில் மேற்பார்வையாளர்',
+                    'role-helpdesk': '24/7 உதவி மையம்',
+                    'call': 'அழை',
+                    'notice-title': 'வசதி மேலாண்மையின் குறிப்பு',
+                    'notice-p1': 'முதன்மை வாயில் திறந்துள்ளது. புதிய பேவர் சாலை அமைக்கும் வரை பின் நுழைவு 1 மூடப்பட்டுள்ளது; விரைவில் மீண்டும் திறக்கப்படும்.',
+                    'notice-p2': 'அதுவரை முதன்மை வாயில் அல்லது பின் நுழைவு 2 ஐப் பயன்படுத்தவும். உங்கள் பொறுமைக்கு நன்றி.',
+                    'sign-off': 'வசதி மேலாண்மை · சந்தியா இன்ஃபோசிட்டி',
+                    'footer': 'சந்தியா இன்ஃபோசிட்டி · வசதி மேலாண்மை',
+                    'footer-loc': 'நாவல்லூர் · சென்னை · தமிழ்நாடு'
                 }
             };
 
@@ -589,26 +597,24 @@
                 if (target) trackClick(target.getAttribute('data-track'));
             });
 
-            var cards = document.querySelectorAll('.entrance-card[data-category]');
-            var badges = document.querySelectorAll('.filter-badge[data-filter]');
+            var cards = document.querySelectorAll('[data-category]');
+            var chips = document.querySelectorAll('.chip[data-filter]');
 
-            badges.forEach(function (badge) {
-                badge.addEventListener('click', function () {
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
                     var filter = this.getAttribute('data-filter');
-                    var wasActive = this.getAttribute('aria-pressed') === 'true';
-                    badges.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-                    if (wasActive) {
+                    chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+                    this.setAttribute('aria-pressed', 'true');
+                    if (filter === 'all') {
                         cards.forEach(function (card) { card.removeAttribute('hidden'); });
-                        trackClick('filter_all');
                     } else {
-                        this.setAttribute('aria-pressed', 'true');
                         cards.forEach(function (card) {
                             var categories = card.getAttribute('data-category').split(' ');
                             if (categories.indexOf(filter) !== -1) card.removeAttribute('hidden');
                             else card.setAttribute('hidden', '');
                         });
-                        trackClick('filter_' + filter);
                     }
+                    trackClick('filter_' + filter);
                 });
             });
 
