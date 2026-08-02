@@ -30,6 +30,7 @@ TARGETS = [
 ]
 
 PNG_PX = 1400              # long edge; clean at A4 print size
+DISPLAY_PX = 400           # on-page copy; the print PNG is too heavy to embed
 MARK_RATIO = 0.20          # share of the QR width the centred mark covers
 
 
@@ -54,10 +55,16 @@ def build(slug, path, src, note):
 
     png_path = os.path.join(OUT, "qr-{}.png".format(slug))
     img.convert("RGB").save(png_path, "PNG", optimize=True)
+
+    # Small lossless copy for on-page display, so the site does not embed the
+    # print file. Lossless matters: a QR still has to scan off a screen.
+    disp_path = os.path.join(OUT, "qr-{}-display.webp".format(slug))
+    img.convert("RGB").resize((DISPLAY_PX, DISPLAY_PX), Image.LANCZOS).save(
+        disp_path, "WEBP", lossless=True, method=6)
     os.remove(tmp)
 
     print("{:<15} {}".format(slug, url))
-    print("{:<15} {} | {}".format("", png_path, svg_path))
+    print("{:<15} {} | {} | {}".format("", png_path, svg_path, disp_path))
     print("{:<15} {}\n".format("", note))
 
 

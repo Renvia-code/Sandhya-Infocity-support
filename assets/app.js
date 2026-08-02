@@ -113,6 +113,14 @@
             'download': 'Download PDF',
             'tap-zoom': 'Tap to open',
 
+            'sec-qr-eyebrow': 'Share',
+            'sec-qr-title': 'QR codes',
+            'sec-qr-desc': 'Point a camera at one of these, or download it to put on a notice board, a standee or anything you print.',
+            'qr-campus': 'Campus access guide',
+            'qr-walk': 'Walking track',
+            'qr-campus-alt': 'QR code for the campus access guide',
+            'qr-walk-alt': 'QR code for the walking track page',
+
             /* --- reserved for the contacts section (disabled 3 Aug 2026) --- */
             'sec-help-eyebrow': 'Contacts',
             'sec-help-title': 'Who to call',
@@ -238,6 +246,14 @@
             'view': 'பார்க்க',
             'download': 'பதிவிறக்கு',
             'tap-zoom': 'திறக்கத் தட்டவும்',
+
+            'sec-qr-eyebrow': 'பகிர',
+            'sec-qr-title': 'QR குறியீடுகள்',
+            'sec-qr-desc': 'கேமராவை இதன் மீது காட்டவும், அல்லது அறிவிப்புப் பலகை மற்றும் அச்சுப் பயன்பாட்டுக்குப் பதிவிறக்கவும்.',
+            'qr-campus': 'வளாக அணுகல் வழிகாட்டி',
+            'qr-walk': 'நடைப்பயணப் பாதை',
+            'qr-campus-alt': 'வளாக அணுகல் வழிகாட்டிக்கான QR குறியீடு',
+            'qr-walk-alt': 'நடைப்பயணப் பாதைப் பக்கத்திற்கான QR குறியீடு',
 
             /* --- reserved for the contacts section (disabled 3 Aug 2026) --- */
             'sec-help-eyebrow': 'தொடர்பு',

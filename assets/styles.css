@@ -489,6 +489,48 @@ a.gate:active { transform: translateY(0); box-shadow: var(--sh-card); }
 }
 .doc-actions { display: flex; gap: var(--s2); margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line); }
 
+/* --- QR cards ------------------------------------------------------------- */
+.subhead { margin: var(--s7) 0 var(--s4); }
+.subhead h3 {
+    font-family: var(--f-display); font-weight: 600; color: var(--ink);
+    font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; margin-top: 5px;
+}
+.subhead p { font-size: 14px; color: var(--muted); margin-top: 6px; max-width: 62ch; }
+
+.qrcard {
+    display: flex; align-items: center; gap: var(--s4);
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md);
+    padding: var(--s4); box-shadow: var(--sh-card);
+}
+.qrcard-code {
+    width: clamp(84px, 26vw, 104px); aspect-ratio: 1; flex-shrink: 0;
+    border: 1px solid var(--line); border-radius: var(--r-sm);
+    background: #fff; overflow: hidden;
+}
+.qrcard-code img { width: 100%; height: 100%; }
+.qrcard-body { min-width: 0; }
+.qrcard-title {
+    font-family: var(--f-display); font-size: 16.5px; font-weight: 600;
+    color: var(--ink); line-height: 1.25; letter-spacing: -0.01em;
+}
+.qrcard-url {
+    font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+    font-size: 10.5px; letter-spacing: 0.02em; color: var(--n-500);
+    margin-top: 5px; overflow-wrap: break-word;
+}
+.qrcard-links { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s3); }
+.qrlink {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 36px; padding: 0 12px; border-radius: var(--r-md);
+    border: 1px solid var(--line-strong); background: var(--card); color: var(--ink);
+    font-family: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+    font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em;
+    transition: background 0.16s ease, border-color 0.16s ease;
+}
+.qrlink:hover { background: var(--subtle); border-color: var(--n-500); }
+.qrlink:active { transform: scale(0.97); }
+.qrlink svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
+
 /* --- Buttons -------------------------------------------------------------- */
 .btn {
     flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
