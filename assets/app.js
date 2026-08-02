@@ -77,7 +77,6 @@
 
             'sec-gates-eyebrow': 'Entrances',
             'sec-gates-title': 'Which gate to use',
-            'sec-gates-desc': 'Gate status is kept current by the Facility Management team. Tap a gate for driving directions.',
             'arrive-all': 'All',
             'arrive-car': 'Car',
             'arrive-bike': 'Bike',
@@ -104,7 +103,6 @@
             'sec-guides-title': 'Guides you can view or download',
             'sec-guides-desc': 'Open a guide to read it here, or download the PDF to keep on your phone.',
             'doc-guide-title': 'Pedestrian and Back Entrance Guide',
-            'doc-guide-desc': 'Photographs of every approach, walking paths from the main road, and how long each one takes on foot.',
             'doc-guide-meta': '7 pages · PDF',
             'doc-route-title': 'HCL 50 walking track route map',
             'doc-route-desc': 'The approved 2 km route across the campus, with the blocks, the podium and the substation area marked.',
@@ -188,7 +186,7 @@
 
             'nav-gates': 'வாயில்கள்',
             'nav-walk': 'நடைப்பயணம்',
-            'nav-guides': 'வழிகாட்டிகள்',
+            'nav-guides': 'ஆவணங்கள்',
             'nav-contacts': 'தொடர்பு',
             'nav-route': 'வழித்தடம்',
             'nav-safety': 'வழியில்',
@@ -211,7 +209,6 @@
 
             'sec-gates-eyebrow': 'நுழைவாயில்கள்',
             'sec-gates-title': 'எந்த வாயிலைப் பயன்படுத்துவது',
-            'sec-gates-desc': 'வாயில் நிலையை வசதி மேலாண்மைக் குழு தொடர்ந்து புதுப்பிக்கிறது. வழிகாட்டுதலுக்கு வாயிலைத் தட்டவும்.',
             'arrive-all': 'அனைத்தும்',
             'arrive-car': 'கார்',
             'arrive-bike': 'இருசக்கர வாகனம்',
@@ -238,7 +235,6 @@
             'sec-guides-title': 'பார்க்கவும் பதிவிறக்கவும் கூடிய வழிகாட்டிகள்',
             'sec-guides-desc': 'இங்கேயே படிக்க வழிகாட்டியைத் திறக்கவும், அல்லது PDF-ஐ உங்கள் தொலைபேசியில் பதிவிறக்கவும்.',
             'doc-guide-title': 'நடைபயணி மற்றும் பின் நுழைவு வழிகாட்டி',
-            'doc-guide-desc': 'ஒவ்வொரு நுழைவுப் பாதையின் புகைப்படங்கள், பிரதான சாலையிலிருந்து நடைவழிகள், ஒவ்வொன்றுக்கும் ஆகும் நேரம்.',
             'doc-guide-meta': '7 பக்கங்கள் · PDF',
             'doc-route-title': 'HCL 50 நடைப்பயண வழி வரைபடம்',
             'doc-route-desc': 'வளாகம் முழுவதும் அங்கீகரிக்கப்பட்ட 2 கி.மீ வழி; பிளாக்குகள், போடியம் மற்றும் மின்நிலையப் பகுதி குறிக்கப்பட்டுள்ளது.',
@@ -472,7 +468,7 @@
         var thumbs   = $('.thumbs', root);
         var foot     = $('.viewer-foot', root);
 
-        var doc = null, page = 0, opener = null, savedScroll = 0;
+        var doc = null, page = 0, savedScroll = 0;
 
         /* iOS Safari ignores overflow:hidden on <body>, so the page is pinned
            with position:fixed and the scroll offset restored on close. */
@@ -482,6 +478,7 @@
             document.body.classList.add('is-locked');
         }
         function unlockScroll() {
+            if (!document.body.classList.contains('is-locked')) return;
             document.body.classList.remove('is-locked');
             document.body.style.top = '';
             window.scrollTo(0, savedScroll);
@@ -538,10 +535,9 @@
             });
         }
 
-        function open(key, trigger) {
+        function open(key) {
             doc = DOCS[key];
             if (!doc) return;
-            opener = trigger || null;
             page = 0;
             titleEl.textContent = t(doc.titleKey);
             dlLink.href = doc.pdf;
@@ -549,19 +545,27 @@
             stage.style.setProperty('--zoomw', doc.width + 'px');
             buildThumbs();
             render();
-            root.hidden = false;
             lockScroll();
-            closeBtn.focus();
+            root.showModal();
             track('view_' + key);
         }
 
-        function close() {
-            root.hidden = true;
+        /* Cleanup is idempotent and is driven from three places on purpose.
+           If it never ran, the body would stay position:fixed and the page
+           would be stuck unscrollable, so it does not hang off one event. */
+        function cleanup() {
             unlockScroll();
             unzoom();
             img.removeAttribute('src');
-            if (opener && opener.focus) opener.focus();
         }
+
+        function closeViewer() {
+            if (root.open) root.close();
+            cleanup();
+        }
+
+        root.addEventListener('close', cleanup);    // Esc, or any programmatic close
+        root.addEventListener('cancel', cleanup);   // Esc, before the close lands
 
         function go(step) {
             if (!doc) return;
@@ -574,11 +578,11 @@
         $$('[data-doc]').forEach(function (el) {
             el.addEventListener('click', function (e) {
                 e.preventDefault();
-                open(this.getAttribute('data-doc'), this);
+                open(this.getAttribute('data-doc'));
             });
         });
 
-        closeBtn.addEventListener('click', close);
+        closeBtn.addEventListener('click', closeViewer);
         prevBtn.addEventListener('click', function () { go(-1); });
         nextBtn.addEventListener('click', function () { go(1); });
 
@@ -588,13 +592,13 @@
         });
 
         root.addEventListener('click', function (e) {
-            if (e.target === stage) close();
+            if (e.target === stage || e.target === root) closeViewer();
         });
 
+        /* Esc is handled natively by the dialog; only paging is ours. */
         document.addEventListener('keydown', function (e) {
-            if (root.hidden) return;
-            if (e.key === 'Escape') close();
-            else if (e.key === 'ArrowLeft') go(-1);
+            if (!root.open) return;
+            if (e.key === 'ArrowLeft') go(-1);
             else if (e.key === 'ArrowRight') go(1);
         });
 
@@ -621,5 +625,9 @@
         if (el) track(el.getAttribute('data-track'));
     });
 
-    track('visit_' + (new URLSearchParams(window.location.search).get('src') || 'direct'));
+    /* ?src= reaches the analytics endpoint, so it is treated as untrusted:
+       lowercased, stripped to a safe alphabet and length-capped. */
+    var rawSrc = new URLSearchParams(window.location.search).get('src') || 'direct';
+    var safeSrc = String(rawSrc).toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 24) || 'direct';
+    track('visit_' + safeSrc);
 })();

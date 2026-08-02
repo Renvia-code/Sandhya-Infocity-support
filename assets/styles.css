@@ -95,8 +95,8 @@ html[lang="ta"] .eyebrow { font-size: 12.5px; }
 html[lang="ta"] h1,
 html[lang="ta"] h2,
 html[lang="ta"] h3 { line-height: 1.3; letter-spacing: 0; }
-html[lang="ta"] .hero-copy h1 { font-size: clamp(24px, 6vw, 34px); }
-html[lang="ta"] .hero-panel h1 { font-size: clamp(26px, 6.4vw, 38px); }
+html[lang="ta"] .hero-copy h1 { font-size: clamp(1.2rem, 5.4vw, 2.125rem); }
+html[lang="ta"] .hero-panel h1 { font-size: clamp(1.35rem, 5.9vw, 2.375rem); }
 html[lang="ta"] .fact dd { font-size: 19px; letter-spacing: 0; }
 html[lang="ta"] .jump a { font-size: 12.5px; padding: 0 8px; }
 html[lang="ta"] .jump a::after { left: 8px; right: 8px; }
@@ -189,10 +189,34 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
     font-family: var(--f-display); font-size: 16px; font-weight: 600;
     color: var(--ink); letter-spacing: -0.01em; white-space: nowrap;
 }
-/* On narrow phones the wordmark is dropped so the section nav keeps its room */
+/* The section nav is the useful control on a phone, so on narrow screens the
+   wordmark is dropped and the language switch shrinks to give it room. */
+.lang-short { display: none; }
 @media (max-width: 559px) {
     .brand-name { display: none; }
     .bar-in { gap: var(--s3); }
+}
+@media (max-width: 399px) {
+    .brand-mark { width: 26px; height: 26px; }
+    .jump a { font-size: 13px; padding: 0 8px; }
+    .jump a::after { left: 8px; right: 8px; }
+    .jump { mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 10px), transparent 100%); }
+    .bar-in { gap: 10px; }
+}
+/* Compact switch where the full word will not fit. In English that is only the
+   very narrow end; in Tamil the nav labels themselves are longer, so it kicks
+   in sooner — and a reader already in Tamil does not need it spelled out. */
+@media (max-width: 339px) {
+    .lang-full { display: none; }
+    .lang-short { display: inline; }
+    .lang button { font-size: 11.5px; padding: 0 10px; }
+}
+@media (max-width: 439px) {
+    html[lang="ta"] .lang-full { display: none; }
+    html[lang="ta"] .lang-short { display: inline; }
+    html[lang="ta"] .lang button { font-size: 11.5px; padding: 0 10px; }
+    html[lang="ta"] .jump a { padding: 0 7px; }
+    html[lang="ta"] .jump a::after { left: 7px; right: 7px; }
 }
 
 .jump {
@@ -236,7 +260,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .hero-frame {
     position: relative; overflow: hidden;
     border-radius: var(--r-md); background: var(--n-100);
-    aspect-ratio: 4 / 3; max-height: 300px;
+    aspect-ratio: 4 / 3; max-height: min(300px, 62svh);
 }
 .hero-frame img { width: 100%; height: 100%; object-fit: cover; }
 .hero-scrim {
@@ -252,7 +276,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
    how many lines the headline runs to in a given language. */
 .hero-copy {
     position: absolute; left: 0; right: 0; bottom: 0;
-    padding: var(--s7) var(--s4) var(--s4);
+    padding: clamp(1.75rem, 9vw, 3rem) var(--s4) var(--s4);
     background: linear-gradient(to bottom, rgba(10, 38, 24, 0) 0%, rgba(10, 38, 24, 0.62) 32%, rgba(10, 38, 24, 0.9) 100%);
 }
 .hero-copy .eyebrow { color: var(--lime-500); text-shadow: 0 1px 8px rgba(10, 38, 24, 0.8); }
@@ -273,26 +297,29 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .hero-panel .eyebrow { color: var(--lime-500); }
 .hero-panel h1 {
     font-family: var(--f-display); font-weight: 600; color: #fff;
-    font-size: clamp(30px, 7.4vw, 44px); line-height: 1.06; letter-spacing: -0.022em; margin-top: 9px;
+    font-size: clamp(1.5rem, 6.6vw, 2.75rem); line-height: 1.08; letter-spacing: -0.022em; margin-top: 9px;
+    text-wrap: balance;
 }
 .hero-panel p { color: var(--on-dark-muted); font-size: 15px; margin-top: 11px; max-width: 52ch; }
 .hero-panel .event-when { margin-top: var(--s4); }
 @media (min-width: 720px) { .hero-panel { padding: var(--s8) var(--s7) var(--s7); } }
 .hero-copy h1 {
     font-family: var(--f-display); font-weight: 600; color: #fff;
-    font-size: clamp(28px, 7vw, 40px); line-height: 1.08; letter-spacing: -0.02em;
+    font-size: clamp(1.3rem, 6.1vw, 2.5rem); line-height: 1.12; letter-spacing: -0.02em;
+    text-wrap: balance;
     margin-top: 7px; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.28);
 }
 .hero-copy p {
-    color: rgba(244, 247, 240, 0.9); font-size: 14.5px; margin-top: 6px; max-width: 46ch;
+    color: rgba(244, 247, 240, 0.92); font-size: clamp(0.8rem, 3.3vw, 0.94rem);
+    margin-top: 6px; max-width: 46ch; text-wrap: pretty;
 }
 
 @media (min-width: 720px) {
-    .hero-frame { aspect-ratio: 16 / 9; max-height: 420px; }
+    .hero-frame { aspect-ratio: 16 / 9; max-height: min(420px, 72svh); }
     .hero-copy { padding: var(--s6); }
 }
 @media (min-width: 1000px) {
-    .hero-frame { aspect-ratio: 21 / 8; max-height: 380px; }
+    .hero-frame { aspect-ratio: 21 / 8; max-height: min(380px, 72svh); }
 }
 
 /* --- Status board --------------------------------------------------------- */
@@ -328,15 +355,16 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .section { padding-top: var(--s7); }
 .section-head { border-top: 2px solid var(--lime-500); padding-top: var(--s3); margin-bottom: var(--s5); }
 .eyebrow {
-    font-family: var(--f-mono); font-size: 11px; font-weight: 500;
-    text-transform: uppercase; letter-spacing: var(--tracking-caps); color: var(--muted);
+    font-family: var(--f-mono); font-size: clamp(0.6rem, 2.5vw, 0.69rem); font-weight: 500;
+    text-transform: uppercase; letter-spacing: clamp(0.08em, 0.5vw, 0.14em); color: var(--muted);
 }
 .section-head h2 {
     font-family: var(--f-display); font-weight: 600; color: var(--ink);
-    font-size: clamp(23px, 4.4vw, 30px); line-height: 1.16; letter-spacing: -0.015em;
+    font-size: clamp(1.24rem, 4.2vw, 1.875rem); line-height: 1.18; letter-spacing: -0.015em;
+    text-wrap: balance;
     margin-top: 5px;
 }
-.section-head p { font-size: 14.5px; color: var(--muted); margin-top: 7px; max-width: 62ch; }
+.section-head p { font-size: 14.5px; color: var(--muted); margin-top: 7px; max-width: 62ch; text-wrap: pretty; }
 
 /* --- Grid ----------------------------------------------------------------- */
 .grid { display: grid; gap: var(--s4); grid-template-columns: 1fr; }
@@ -363,7 +391,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .event .eyebrow { color: var(--lime-500); }
 .event h3 {
-    font-family: var(--f-display); font-size: clamp(21px, 4.6vw, 27px); font-weight: 600;
+    font-family: var(--f-display); font-size: clamp(1.16rem, 4.4vw, 1.7rem); font-weight: 600; text-wrap: balance;
     color: #fff; line-height: 1.18; margin-top: 7px; letter-spacing: -0.015em;
 }
 .event p { color: var(--on-dark-muted); font-size: 14.5px; margin-top: 8px; max-width: 52ch; }
@@ -487,7 +515,8 @@ a.gate:active { transform: translateY(0); box-shadow: var(--sh-card); }
     font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
     color: var(--n-500); margin-top: 10px;
 }
-.doc-actions { display: flex; gap: var(--s2); margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line); }
+.doc-actions { display: flex; gap: var(--s2); margin-top: auto; padding-top: var(--s4); border-top: 1px solid var(--line); }
+.doc-desc + .doc-meta, .doc-title + .doc-meta { margin-bottom: var(--s4); }
 
 /* --- QR cards ------------------------------------------------------------- */
 .subhead { margin: var(--s7) 0 var(--s4); }
@@ -503,7 +532,7 @@ a.gate:active { transform: translateY(0); box-shadow: var(--sh-card); }
     padding: var(--s4); box-shadow: var(--sh-card);
 }
 .qrcard-code {
-    width: clamp(84px, 26vw, 104px); aspect-ratio: 1; flex-shrink: 0;
+    width: clamp(72px, 24vw, 104px); aspect-ratio: 1; flex-shrink: 0;
     border: 1px solid var(--line); border-radius: var(--r-sm);
     background: #fff; overflow: hidden;
 }
@@ -528,6 +557,13 @@ a.gate:active { transform: translateY(0); box-shadow: var(--sh-card); }
     transition: background 0.16s ease, border-color 0.16s ease;
 }
 .qrlink:hover { background: var(--subtle); border-color: var(--n-500); }
+/* Below ~340px the code and the text can no longer sit side by side */
+@media (max-width: 339px) {
+    .qrcard { flex-direction: column; align-items: flex-start; gap: var(--s3); }
+    .qrcard-code { width: 92px; }
+    .qrcard-links { width: 100%; }
+    .qrlink { flex: 1; justify-content: center; }
+}
 .qrlink:active { transform: scale(0.97); }
 .qrlink svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
 
@@ -679,17 +715,22 @@ a.gate:active { transform: translateY(0); box-shadow: var(--sh-card); }
 .footer-meta a:hover { color: var(--green-700); }
 
 /* --- Viewer overlay ------------------------------------------------------- */
+/* Native <dialog> opened with showModal(): the browser supplies the top layer,
+   the focus trap, the inert background and Esc-to-close. Only the chrome
+   defaults need resetting. */
 .viewer {
-    position: fixed; inset: 0; z-index: 120;
-    background: var(--green-950);
-    display: flex; flex-direction: column;
-    animation: fade 0.2s ease;
-    overscroll-behavior: contain;
+    position: fixed; inset: 0;
+    width: 100%; max-width: 100%; height: 100%; max-height: 100%;
+    margin: 0; padding: 0; border: 0;
+    background: var(--green-950); color: var(--body);
+    overflow: hidden; overscroll-behavior: contain;
 }
+.viewer[open] { display: flex; flex-direction: column; animation: fade 0.2s ease; }
+.viewer::backdrop { background: var(--green-950); }
 /* Track the dynamic viewport so the stage is not clipped by mobile toolbars */
-@supports (height: 100dvh) { .viewer { height: 100dvh; } }
+@supports (height: 100dvh) { .viewer { height: 100dvh; max-height: 100dvh; } }
 /* These carry a display value, so the plain [hidden] default is not enough */
-.viewer[hidden], .viewer-nav[hidden], .thumbs[hidden], .viewer-foot[hidden] { display: none; }
+.viewer-nav[hidden], .thumbs[hidden], .viewer-foot[hidden] { display: none; }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 
 .viewer-bar {
